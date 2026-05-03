@@ -1,0 +1,26 @@
+[project]
+name = "servicio-notificaciones"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.104.0,<1.0.0",
+    "uvicorn>=0.24.0,<1.0.0",
+    "sendgrid>=6.12.5,<7.0.0",
+    "twilio>=8.0.0,<9.0.0",
+    "pydantic>=2.5.0,<3.0.0",
+    "pydantic-settings>=2.1.0,<3.0.0",
+    "python-dotenv>=1.0.0,<2.0.0",
+    "fastapi-mail>=1.4.0,<2.0.0"
+]
+
+[tool.poetry]
+packages = [{include = "servicio_notificaciones", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
