@@ -18,7 +18,7 @@ RUN git clone https://github.com/AL3X09/servicio_notificaciones.git .
 
 # Instalar poetry y dependencias
 RUN pip install --no-cache-dir poetry
-RUN poetry install --no-root --without dev
+RUN poetry install --no-root
 
 # IMPORTANTE: Instalar el proyecto actual en modo editable o como paquete
 # Esto registra "servicio_notificaciones" en los site-packages de Python
