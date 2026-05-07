@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     MAIL_FROM_NAME: str = Field(..., env='MAIL_FROM_NAME')
 
     class Config:
-        env_file = ".env.dev"
+        env_file = ".env"
         env_file_encoding = 'utf-8'
 
 settings = Settings()
