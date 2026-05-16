@@ -29,4 +29,8 @@ RUN pip install --no-cache-dir asyncpg
 EXPOSE 8002
 
 # Ajustamos el CMD para asegurarnos de que llame al módulo correctamente
-CMD ["python", "-m", "uvicorn", "servicio_notificaciones.app.main:app", "--host", "0.0.0.0", "--port", "8002", "--workers", "2"]
+#CMD ["python", "-m", "uvicorn", "servicio_notificaciones.app.main:app", "--host", "0.0.0.0", "--port", "8002"]
+CMD ["gunicorn", "servicio_notificaciones.app.main:app", \
+     "--workers", "2", \
+     "--worker-class", "uvicorn.workers.UvicornWorker", \
+     "--bind", "0.0.0.0:8002"]
