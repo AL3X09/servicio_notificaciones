@@ -24,7 +24,8 @@ RUN poetry install --no-root
 # Esto registra "servicio_notificaciones" en los site-packages de Python
 RUN pip install -e .
 
-RUN pip install --no-cache-dir asyncpg
+RUN pip install --no-cache-dir asyncpg gunicorn uvicorn[standard]
+
 
 EXPOSE 8002
 

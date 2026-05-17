@@ -32,7 +32,8 @@ args=()
 while IFS= read -r line; do
   args+=(--build-arg "$line")
 done < <(grep ^VITE_ /opt/ph-app/front/.env)
-podman build "${args[@]}"  --no-cache   -t vue-admin:latest  https://github.com/AL3X09/servicio_notificaciones.git#master
+podman build "${args[@]}"  --no-cache   -t vue-admin:latest  https://github.com/AL3X09/vue-admin.git#master
+
 
 
 # crear el pod
