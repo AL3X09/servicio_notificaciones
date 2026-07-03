@@ -24,4 +24,6 @@ class ServicioSMS:
             }
         except Exception as e:
             # Dejaremos que la excepción sea manejada por quien llama (ruta)
+            print(f"error : {e}")
             raise e
+        

@@ -23,8 +23,6 @@ async def enviar_sms(
     """
     Endpoint para enviar un SMS.
     """
-    #print(f"rere recibida: {sms_data}")
-    #print(f"API Key recibida: {api_key}")
     sms_service = ServicioSMS()
     try:
         resultado = await sms_service.enviar_sms(

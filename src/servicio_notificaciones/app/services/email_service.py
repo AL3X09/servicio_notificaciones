@@ -20,12 +20,11 @@ class ServicioEmail:
             MAIL_FROM=settings.MAIL_FROM,
             MAIL_PORT=settings.MAIL_PORT,
             MAIL_SERVER=settings.MAIL_SERVER,
-            MAIL_STARTTLS=settings.MAIL_TLS,
-            MAIL_SSL_TLS=settings.MAIL_SSL,
+            MAIL_STARTTLS=True,
+            MAIL_SSL_TLS=False,
             MAIL_FROM_NAME=settings.MAIL_FROM_NAME,
             USE_CREDENTIALS=True,
             VALIDATE_CERTS=True,
-            TIMEOUT=30
         )
         self.fm = FastMail(self.mail_config)
 

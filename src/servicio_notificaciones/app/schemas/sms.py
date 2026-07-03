@@ -7,15 +7,17 @@ class SMSSchema(BaseModel):
 
     @validator('to_number')
     def validate_phone_number(cls, v):
-        # Simple validation for phone number (E.164 format)
-        if not re.match(r'^\+[1-9]\d{1,14}$', v):
-            raise ValueError('Phone number must be in E.164 format (e.g., +1234567890)')
+        # Colombia: +57 seguido de 10 dígitos (celular: 3XXXXXXXXX)
+        if not re.match(r'^\+57[3][0-9]{9}$', v):
+            raise ValueError(
+                'El número debe ser colombiano en formato E.164 (ej: +573011234567)'
+            )
         return v
 
     class Config:
         json_schema_extra = {
             "example": {
-                "to_number": "+1234567890",
-                "message_body": "Hello from Twilio!"
+                "to_number": "+573011234567",
+                "message_body": "Hola desde Twilio!"
             }
         }
